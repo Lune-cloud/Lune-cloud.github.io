@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lune – Développeur · Services en ligne sur mesure</title>
+<meta name="description" content="Lune, développeur : je conçois et je lance des services en ligne de A à Z. Découvrez Kura Mail et Santana Chat.">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:title" content="Lune – Développeur">
+<meta property="og:description" content="Des services en ligne conçus de A à Z : messagerie, chat, sites et applications.">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🌙</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0b0d10;--bg2:#12151b;--line:#232833;--ink:#eef1f7;--muted:#98a1b3;
+ --accent:#9fb4ff;--accent-ink:#0b0d10;--ok:#5ee6a8;
+ --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);overflow-x:hidden}
+body::before{content:"";position:absolute;inset:0 0 auto;height:46rem;z-index:-1;pointer-events:none;
+ background:radial-gradient(48rem 30rem at 78% 8%,rgba(120,145,255,.22),transparent 70%),
+ radial-gradient(30rem 20rem at 5% 30%,rgba(120,145,255,.08),transparent 70%)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.top{position:sticky;top:0;z-index:10;padding-top:env(safe-area-inset-top,0px);background:rgba(11,13,16,.8);
+ backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:4.2rem}
+.logo{font:800 1.3rem var(--display);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.logo i{width:.9rem;height:.9rem;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+nav{display:flex;align-items:center;gap:1.7rem}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.98rem;transition:color .2s}
+nav a:hover,nav a.on{color:var(--ink)}
+nav .pill{color:var(--accent-ink);background:var(--accent);padding:.5rem 1.15rem;border-radius:2rem;font-weight:600}
+nav .pill:hover{color:var(--accent-ink);filter:brightness(1.1)}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:3rem;align-items:center;padding:5.5rem 0 3.5rem}
+.badge{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--line);background:var(--bg2);border-radius:2rem;
+ padding:.35rem 1rem;font-size:.92rem;color:var(--muted);margin-bottom:1.6rem}
+.badge i{width:.55rem;height:.55rem;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(94,230,168,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 .6rem rgba(94,230,168,0)}100%{box-shadow:0 0 0 0 rgba(94,230,168,0)}}
+.hero h1{font:800 clamp(2.5rem,5.8vw,4.5rem)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 1.4rem}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:33rem;margin:0 0 2.2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:.7rem;font-weight:600;text-decoration:none;background:var(--accent);
+ color:var(--accent-ink);border:1px solid var(--accent);transition:transform .2s,filter .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent);filter:none}
+.moon-box{display:grid;place-items:center}
+.moon{width:min(100%,330px);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle at 62% 28%,rgba(110,120,170,.5) 0 7%,transparent 7.5%),radial-gradient(circle at 30% 60%,rgba(110,120,170,.45) 0 11%,transparent 11.5%),
+ radial-gradient(circle at 66% 70%,rgba(110,120,170,.4) 0 6%,transparent 6.5%),radial-gradient(circle at 36% 28%,#fff 0,#e3e8ff 42%,#a3b0e4 100%);
+ box-shadow:0 0 100px 12px rgba(140,165,255,.28),inset -30px -20px 60px rgba(60,70,130,.5);
+ animation:rise 1.6s cubic-bezier(.2,.7,.2,1) both,float 9s ease-in-out 1.6s infinite}
+@keyframes rise{from{opacity:0;transform:translateY(60px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-12px)}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:1rem;background:var(--bg2);margin-bottom:2rem}
+.facts div{padding:1.4rem 1.6rem;border-left:1px solid var(--line)}
+.facts div:first-child{border-left:0}
+.facts strong{display:block;font:800 1.7rem var(--display)}
+.facts span{color:var(--muted);font-size:.95rem}
+section{padding:4.5rem 0}
+h2{font:800 clamp(1.9rem,4vw,2.7rem)/1.1 var(--display);letter-spacing:-.025em;margin:0 0 .7rem}
+.lead{color:var(--muted);max-width:36rem;margin:0 0 2.6rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem}
+.card,.tile{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:1.1rem;overflow:hidden;
+ transition:transform .25s,border-color .25s}
+.card::after,.tile::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+ background:radial-gradient(22rem circle at var(--x,50%) var(--y,0),rgba(159,180,255,.14),transparent 60%)}
+.card:hover,.tile:hover{transform:translateY(-5px);border-color:#3b4768}
+.card:hover::after,.tile:hover::after{opacity:1}
+.card{display:flex;flex-direction:column}
+.win{display:flex;align-items:center;gap:.4rem;padding:.65rem .9rem;border-bottom:1px solid var(--line);background:#0f1217}
+.win i{width:.65rem;height:.65rem;border-radius:50%;background:#2a303c}
+.win span{margin-left:.6rem;flex:1;font-size:.82rem;color:var(--muted);background:var(--bg);border-radius:.4rem;padding:.15rem .7rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot{aspect-ratio:16/10;background:#fff;display:grid;place-items:center}
+.shot img{width:100%;height:100%;object-fit:contain;display:block}
+.body{padding:1.6rem;display:flex;flex-direction:column;gap:.75rem;flex:1}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem;color:var(--ok)}
+.status i{width:.5rem;height:.5rem;border-radius:50%;background:var(--ok)}
+.card h3{font:600 1.55rem/1.2 var(--display);margin:0}
+.card p{margin:0;color:var(--muted)}
+.card .btn{align-self:flex-start;margin-top:auto}
+.cols3,.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
+.steps{grid-template-columns:repeat(4,minmax(0,1fr));counter-reset:s}
+.svc{border-top:2px solid var(--accent);padding-top:1.2rem}
+.svc h3,.step h3{font:600 1.3rem var(--display);margin:0 0 .5rem}
+.svc p,.step p{margin:0;color:var(--muted)}
+.step{counter-increment:s;padding:1.4rem;border:1px solid var(--line);border-radius:1rem;background:var(--bg2)}
+.step::before{content:counter(s);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;
+ background:var(--accent);color:var(--accent-ink);font:800 1rem var(--display);margin-bottom:1rem}
+.about{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:3rem}
+.about p{margin:0 0 1rem;color:var(--muted);max-width:38rem}
+.about p:first-child{color:var(--ink);font-size:1.25rem}
+.open{list-style:none;margin:0;padding:1.4rem 1.6rem;border:1px solid var(--line);border-radius:1rem;background:var(--bg2);align-self:start}
+.open li{padding:.6rem 0;border-bottom:1px solid var(--line)}
+.open li:last-child{border:0}
+.open small{display:block;color:var(--muted);font-size:.9rem}
+.contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.tile{display:block;text-align:left;font:inherit;color:inherit;padding:1.4rem 1.5rem;text-decoration:none;cursor:pointer}
+.tile small{display:block;color:var(--muted);font-size:.9rem}
+.tile strong{display:block;font:600 1.15rem var(--display);margin-top:.2rem;overflow-wrap:anywhere}
+.hint{min-height:1.6rem;margin:1rem 0 0;color:var(--accent);font-size:.95rem}
+footer{border-top:1px solid var(--line);padding:2rem 0 calc(2.5rem + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer a{text-decoration:none;margin-left:1.4rem}footer a:hover{color:var(--ink)}
+@media (max-width:860px){
+ .hero{grid-template-columns:1fr;padding:3rem 0 2rem}.moon-box{order:-1}.moon{width:min(55%,230px)}
+ .grid,.cols3,.contacts,.about{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}
+ .facts{grid-template-columns:1fr}.facts div{border-left:0;border-top:1px solid var(--line)}.facts div:first-child{border-top:0}
+ nav a:not(.pill){display:none}footer a{margin:0 1.2rem 0 0}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.moon,.badge i{animation:none}.card,.tile,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="#top"><i></i>Lune</a>
+ <nav aria-label="Navigation principale">
+  <a href="#projets">Projets</a><a href="#services">Services</a><a href="#methode">Méthode</a><a href="#a-propos">À propos</a>
+  <a class="pill" href="#contact">Me contacter</a>
+ </nav>
+</div></header>
+<main id="top"><div class="wrap">
+
+<div class="hero">
+ <div>
+  <div class="badge"><i></i>Ouvert aux collaborations et aux missions</div>
+  <h1>Des services en ligne, conçus de A à Z.</h1>
+  <p>Je suis Lune, développeur. Je transforme une idée en un service qui fonctionne : conception, développement et mise en ligne, avec un résultat clé en main.</p>
+  <div class="cta"><a class="btn" href="#projets">Voir mes projets</a><a class="btn ghost" href="#contact">Me contacter</a></div>
+ </div>
+ <div class="moon-box"><div class="moon" role="img" aria-label="Une pleine lune"></div></div>
+</div>
+
+<div class="facts">
+ <div><strong>2</strong><span>services en ligne créés et gérés par mes soins</span></div>
+ <div><strong>De A à Z</strong><span>de l’idée à la mise en ligne</span></div>
+ <div><strong>Sur mesure</strong><span>chaque projet est pensé pour son besoin</span></div>
+</div>
+
+<section id="projets">
+ <h2>Projets</h2>
+ <p class="lead">Deux services complets, créés de zéro et accessibles en ligne dès aujourd’hui.</p>
+ <div class="grid">
+  <article class="card">
+   <div class="win"><i></i><i></i><i></i><span>kuramail.pro</span></div>
+   <div class="shot"><img src="projet1.png" alt="Logo de Kura Mail : une enveloppe rouge et noire" onerror="this.remove()"></div>
+   <div class="body">
+    <span class="status"><i></i>En ligne</span>
+    <h3>Kura Mail</h3>
+    <p>Mon propre service de messagerie en ligne. Je l’ai créé pour avoir un service de mail à moi, que je contrôle de bout en bout.</p>
+    <a class="btn" href="https://kuramail.pro/">Visiter le site</a>
+   </div>
+  </article>
+  <article class="card">
+   <div class="win"><i></i><i></i><i></i><span>santana-chat.duckdns.org</span></div>
+   <div class="shot"><img src="projet2.png" alt="Logo de Santana Chat : un pirate squelette avec son sabre" onerror="this.remove()"></div>
+   <div class="body">
+    <span class="status"><i></i>En ligne</span>
+    <h3>Santana Chat</h3>
+    <p>Mon propre service de discussion en ligne. Je l’ai créé pour proposer un espace de chat indépendant, que je gère moi-même.</p>
+    <a class="btn" href="https://santana-chat.duckdns.org/">Visiter le site</a>
+   </div>
+  </article>
+ </div>
+</section>
+
+<section id="services">
+ <h2>Services</h2>
+ <p class="lead">Ce que je peux construire pour toi ou avec toi.</p>
+ <div class="cols3">
+  <div class="svc"><h3>Sites web</h3><p>Des pages claires, rapides et agréables à parcourir, sur ordinateur comme sur mobile.</p></div>
+  <div class="svc"><h3>Applications</h3><p>Des outils qui répondent à un besoin précis, avec une interface simple à prendre en main.</p></div>
+  <div class="svc"><h3>Services en ligne</h3><p>Des plateformes complètes comme une messagerie ou un chat, mises en ligne et maintenues.</p></div>
+ </div>
+</section>
+
+<section id="methode">
+ <h2>Méthode</h2>
+ <p class="lead">Une démarche simple, du premier échange jusqu’au service en ligne.</p>
+ <div class="steps">
+  <div class="step"><h3>Comprendre</h3><p>On définit ensemble l’idée, le besoin et ce que le service doit permettre.</p></div>
+  <div class="step"><h3>Concevoir</h3><p>Je prépare une structure claire et une interface simple à utiliser.</p></div>
+  <div class="step"><h3>Développer</h3><p>Je code le service avec soin, en gardant un code lisible et durable.</p></div>
+  <div class="step"><h3>Mettre en ligne</h3><p>Je publie le service et je le fais évoluer ensuite.</p></div>
+ </div>
+</section>
+
+<section id="a-propos">
+ <h2>À propos</h2>
+ <div class="about">
+  <div>
+   <p>Je m’appelle Lune et je développe des projets de toutes sortes. J’aime transformer une idée en quelque chose qui fonctionne, de la structure de la page jusqu’au code qui la fait tourner.</p>
+   <p>Je travaille de façon simple et soignée : un code lisible, une interface claire, et des outils que je prends le temps de comprendre. J’apprends en construisant, et je continue à lancer de nouveaux projets.</p>
+  </div>
+  <ul class="open">
+   <li>Collaborations<small>Projets à plusieurs, petits ou grands</small></li>
+   <li>Stages<small>Ouvert aux propositions</small></li>
+   <li>Missions<small>Création de sites, d’applications ou de services</small></li>
+  </ul>
+ </div>
+</section>
+
+<section id="contact">
+ <h2>Un projet en tête ?</h2>
+ <p class="lead">Écris-moi, ou retrouve-moi sur GitHub et Discord. Choisis le moyen qui t’arrange.</p>
+ <div class="contacts">
+  <a class="tile" href="mailto:lune@kuramail.pro"><small>E-mail</small><strong>lune@kuramail.pro</strong></a>
+  <a class="tile" href="https://github.com/Lune-cloud"><small>GitHub</small><strong>Nuage de lune</strong></a>
+  <button class="tile" type="button" id="discord" title="Copier le pseudo"><small>Discord (clic pour copier)</small><strong>0pinel2</strong></button>
+ </div>
+ <p class="hint" id="hint" aria-live="polite"></p>
+</section>
+
+</div></main>
+<footer><div class="wrap"><span>© 2026 Lune</span><span><a href="#projets">Projets</a><a href="#services">Services</a><a href="#contact">Contact</a></span></div></footer>
+
+<script>
+document.getElementById("discord").addEventListener("click",function(){
+ var h=document.getElementById("hint"),p="0pinel2";
+ function ok(){h.textContent="Pseudo Discord copié : "+p}function ko(){h.textContent="Mon pseudo Discord : "+p}
+ if(navigator.clipboard){navigator.clipboard.writeText(p).then(ok,ko)}else{ko()}
+});
+document.querySelectorAll(".card,.tile").forEach(function(e){
+ e.addEventListener("pointermove",function(v){var r=e.getBoundingClientRect();
+  e.style.setProperty("--x",v.clientX-r.left+"px");e.style.setProperty("--y",v.clientY-r.top+"px")})
+});
+if("IntersectionObserver"in window){
+ var links=document.querySelectorAll("nav a[href^='#']:not(.pill)");
+ var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){
+  links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+x.target.id)})}})},{rootMargin:"-45% 0px -50% 0px"});
+ document.querySelectorAll("section[id]").forEach(function(s){io.observe(s)});
+}
+</script>
+</body>
+</html>
